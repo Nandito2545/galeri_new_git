@@ -1,0 +1,30 @@
+RewriteEngine On
+
+
+
+# Abaikan rewrite untuk folder admin agar bisa jalan mandiri
+RewriteRule ^admin(/.*)?$ - [L]
+
+# Jangan ubah jika file/folder asli
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL dari /user/nama → /user/index.php?page=nama
+RewriteRule ^(.*)/([a-zA-Z0-9_-]+)/?$ $1/index.php?page=$2 [QSA,L]
+
+# Rewrite URL dari /nama → index.php?page=nama
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?page=$1 [QSA,L]
+
+# Redirect dari /?page=nama → /nama
+RewriteCond %{THE_REQUEST} \s/+\?page=([a-zA-Z0-9_-]+) [NC]
+RewriteRule ^ index.php?page=%1 [R=301,L]
+
+# Redirect dari /user/?page=nama → /user/nama
+RewriteCond %{THE_REQUEST} \s/+([a-zA-Z0-9_-]+)/\?page=([a-zA-Z0-9_-]+) [NC]
+RewriteRule ^ %1/index.php?page=%2 [R=301,L]
+
+# galeri-detail/2/Nama Galeri → index.php?page=galeri-detail&id=2
+RewriteRule ^galeri-detail/([0-9]+)/([a-zA-Z0-9_%\-\s]+)$ index.php?page=galeri-detail&id=$1 [QSA,L]
+
+
+

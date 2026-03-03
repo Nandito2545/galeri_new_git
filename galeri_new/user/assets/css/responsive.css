@@ -1,0 +1,220 @@
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    #artikel1 .container:first-child .head .title {
+    font-size: 2.5em;
+    max-width: 70%;
+  }
+
+  #artikel1 .container:first-child .head .lead {
+    font-size: 1em;
+    max-width: 80%;
+  }
+
+  #artikel1 .container:first-child .head .img {
+    height: 70vh;
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf {
+    width: 100%;
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) p {
+    font-size: 1.1em;
+    width: 80%;
+  }
+
+  #artikel1 .container:nth-child(2) .adv {
+    width: 100%;
+    padding-top: 50px;
+    text-align: center; /* Center the "Most Popular" section */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular {
+    padding: 3cm 10% 0 20px;
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content {
+    flex-direction: row; /* Set flex direction to row */
+    align-items: center; /* Align items to center */
+    justify-content: center; /* Center content horizontally */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px; /* Add some space between image and text */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .desc {
+    width: auto;
+    text-align: start; /* Align text to the start */
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    #artikel1 .container {
+    flex-direction: column;
+  }
+
+  #artikel1 .container:first-child .head .title {
+    font-size: 2em;
+    max-width: 80%;
+  }
+
+  #artikel1 .container:first-child .head .lead {
+    font-size: 0.9em;
+    max-width: 90%;
+  }
+
+  #artikel1 .container:first-child .head .img {
+    height: 60vh;
+  }
+  #artikel1 .container:nth-child(2){
+    margin-left: 10%;
+  }
+  #artikel1 .container:nth-child(2) .paragraf {
+    width: 100%;
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) p {
+    font-size: 1em;
+    width: 100%;
+  }
+
+  #artikel1 .container:nth-child(2) .adv {
+    width: 100%;
+    padding-top: 30px;
+    order: 2;
+    text-align: center; /* Center the "Most Popular" section */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular {
+    padding: 2cm 5% 0 10px;
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content {
+    flex-direction: row; /* Set flex direction to row */
+    align-items: center; /* Align items to center */
+    justify-content: center; /* Center content horizontally */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px; /* Add some space between image and text */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .desc {
+    width: auto;
+    text-align: start; /* Align text to the start */
+  }
+}
+
+@media screen and (max-width: 480px){
+    #artikel1 .container {
+    flex-direction: column;
+  }
+
+  #artikel1 .container:first-child .head .title {
+    font-size: 1.5em;
+    max-width: 80%;
+  }
+
+  #artikel1 .container:first-child .head .lead {
+    font-size: 0.7em;
+    max-width: 70%;
+  }
+
+  #artikel1 .container:first-child .head .img {
+    height: 50vh;
+  }
+  #artikel1 .container:first-child .head .waktu {
+    font-size: 0.7em;
+  }
+  #artikel1 .container:nth-child(2) {
+    width: 100%;
+    padding: 0;
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(1) {
+    width: 15%;
+  }
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) {
+    width: 77%;
+    margin-right: 7%;
+    
+  }
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) p {
+    font-size: 0.8em;
+    word-wrap: break-word;
+  }
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) .img {
+    width: 266px;
+    height: 150px;
+  }
+  #artikel1 .container:nth-child(2) .paragraf .desc{
+    font-size: 8px;
+    width: 263px;
+  }
+  #artikel1 .container:nth-child(2) .paragraf .desc img{
+    height: 9px;
+  }
+  #artikel1 .container:nth-child(2) .paragraf .row:nth-child(2) .penulis {
+    font-size: 0.9em;
+  }
+  #artikel1 .container:nth-child(2) .adv {
+    width: 100%;
+    padding-top: 20px;
+    order: 2;
+    text-align: center; /* Center the "Most Popular" section */
+    justify-content: center;
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular {
+    padding: 1cm 0% 0 0px;
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content {
+    flex-direction: row; /* Set flex direction to row */
+    align-items: start; /* Align items to center */
+    justify-content: left; /* Center content horizontally */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .img {
+    width: 100px; /* Set consistent width */
+    height: 100px; /* Set consistent height */
+    margin-right: 10px; /* Add some space between image and text */
+    object-fit: cover; /* Ensure images cover the set dimensions */
+  }
+
+  #artikel1 .container:nth-child(2) .adv .mostPopular .content .desc {
+    width: 80%;
+    text-align: start; /* Align text to the start */
+  }
+
+  #artikel1 .container:nth-child(2) .paragraf {
+    order: 1;
+  }
+  #readmore .slider-page {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #readmore .slide {
+    flex: 0 0 80%;
+    min-width: 80%;
+    scroll-snap-align: start;
+    margin-right: 10px;
+  }
+}
+
+
+
+

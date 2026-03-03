@@ -1,0 +1,288 @@
+<style>
+.editorial-fixed {
+  height: 100vh;
+  font-family: "Playfair Display", serif;
+  overflow: hidden;
+}
+
+/* LEFT */
+.left-area {
+  width: 65%;
+  margin-top: 4%;
+  padding: 0px 20px;
+}
+
+/* HERO */
+.hero-fixed {
+  position: relative;
+  height: 60%;
+}
+
+.hero-fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-title-fixed {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  background: #7f9484;
+  color: #fff;
+  padding: 22px 28px;
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+.hero-tag-fixed {
+  position: absolute;
+  bottom: -25px;
+  left: 0px;
+  background: #7f9484;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.hero-dots-fixed {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.hero-dots-fixed span {
+  width: 10px;
+  height: 10px;
+  background: #b46a45;
+  border-radius: 50%;
+}
+
+/* THUMBS */
+.thumbs-fixed {
+  display: flex;
+  margin-top: 6%;
+}
+.thumb-item{
+    padding: 10px 15px;
+    border-right: 1px solid black;
+}
+.thumb-item img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.thumb-item p {
+  font-size: 14px;
+  margin: 6px 0 2px;
+}
+
+.thumb-item small {
+  color: #b24;
+  font-size: 12px;
+}
+
+/* RIGHT */
+.right-area {
+  width: 34%;
+  margin-top: 4%;
+  padding: 0px 40px;
+  position: relative;
+}
+
+.side-article {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.side-article img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.side-article h6 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.side-article span {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.right-area hr {
+  margin: 20px 0;
+}
+
+.side-nav-fixed {
+  position: absolute;
+  bottom: 40px;                 /* atur posisi vertikal */
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+}
+
+/* LINGKARAN */
+.side-nav-fixed i {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #222;
+  border-radius: 50%;
+
+  font-size: 20px;
+  color: #222;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.side-nav-fixed i:hover {
+  background: #222;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+
+/* STRIP */
+.color-strip {
+  width: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-strip .brown {
+  height: 70%;
+  background: #7a3f21;
+}
+
+.color-strip .green {
+  height: 30%;
+  background: #7f9484;
+}
+
+
+</style>
+<section class="editorial-fixed d-flex">
+    <div class="global-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+  <!-- LEFT -->
+  <div class="left-area">
+
+    <!-- HERO -->
+    <div class="hero-fixed">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+
+      <div class="hero-title-fixed">
+        Lorem ipsum, or lipsum<br>
+        as it is sometimes<br>
+        known
+      </div>
+
+      <div class="hero-dots-fixed">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="hero-tag-fixed">INSPIRASI</div>
+    </div>
+
+    <!-- THUMBS -->
+    <div class="thumbs-fixed">
+      <div class="thumb-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d">
+        <p>Lorem ipsum dolor sit amet</p>
+        <small>BY: ANNA KARINA</small>
+      </div>
+      <div class="thumb-item">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+        <p>Lorem ipsum dolor sit amet</p>
+        <small>BY: ANNA KARINA</small>
+      </div>
+      <div class="thumb-item">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+        <p>Lorem ipsum dolor sit amet</p>
+        <small>BY: ANNA KARINA</small>
+      </div>
+      <div class="thumb-item">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde">
+        <p>Lorem ipsum dolor sit amet</p>
+        <small>BY: ANNA KARINA</small>
+      </div>
+      <div class="thumb-item">
+        <img src="https://images.unsplash.com/photo-1548142813-c348350df52b">
+        <p>Lorem ipsum dolor sit amet</p>
+        <small>BY: ANNA KARINA</small>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <aside class="right-area">
+
+    <div class="side-article">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+      <div>
+        <h6>Charli XCX Is Nostalgic for 2024</h6>
+        <span>BY SAMUEL MAUDE</span>
+      </div>
+    </div>
+
+    <div class="side-article">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+      <div>
+        <h6>Ruth Gemmell Turns Up the Heat in <em>Bridgerton</em></h6>
+        <span>BY LAUREN PUCKETT-POPE</span>
+      </div>
+    </div>
+
+    <div class="side-article">
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde">
+      <div>
+        <h6>The Chicest Celebrity Looks to Shop This Week</h6>
+        <span>BY MEG DONOHUE</span>
+      </div>
+    </div>
+
+    <div class="side-article">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+      <div>
+        <h6>ELLE Escapes: Park City</h6>
+        <span>BY CLAIRE STERN MILCH</span>
+      </div>
+    </div>
+
+    <div class="side-nav-fixed">
+        <i class="bi bi-chevron-left"></i>
+        <i class="bi bi-chevron-right"></i>
+    </div>
+
+  </aside>
+
+  <!-- STRIPS -->
+  <div class="color-strip">
+    <div class="brown"></div>
+    <div class="green"></div>
+  </div>
+
+</section>

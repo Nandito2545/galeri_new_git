@@ -1,0 +1,117 @@
+<section class="books-section container-fluid p-0">
+  <div class="row g-0 h-100">
+
+    <!-- LEFT IMAGE -->
+    <div class="col-md-4 books-left">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="">
+      <div class="left-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="col-md-8 books-right">
+
+      <!-- GRID BUKU -->
+      <div class="books-grid">
+
+        <!-- ITEM -->
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8231856-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8228691-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8235116-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8235116-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8231992-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8231992-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8231021-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8231021-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <!-- BARIS 2 -->
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8234501-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8234501-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8233924-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8233924-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8233112-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8233112-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8231005-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8231005-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+        <a href="#" class="book-item" data-image="https://covers.openlibrary.org/b/id/8231987-L.jpg">
+          <img src="https://covers.openlibrary.org/b/id/8231987-L.jpg">
+          <p>The Comfiest Platform Sneakers<br><em>Our Editors</em></p>
+        </a>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="books-footer">
+        <div class="title">BUKU & PENERBITAN</div>
+        <div class="links">
+          <span>Our publishing<br><small>Getting published</small></span>
+          <span>Distributing<br><small>Sales</small></span>
+          <span>Partnerships<br><small>Contact us</small></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="side-color-bar">
+        <div class="color-green"></div>
+        <div class="color-brown"></div>
+    </div>  
+</section>
+<script>
+const leftImage = document.querySelector('.books-left img');
+const dots = document.querySelectorAll('.left-dots span');
+const books = document.querySelectorAll('.book-item');
+
+function changeImage(src, index) {
+  leftImage.classList.add('fade');
+
+  setTimeout(() => {
+    leftImage.src = src;
+    leftImage.classList.remove('fade');
+  }, 300);
+
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+/* CLICK DOT */
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    const img = books[index].dataset.image;
+    changeImage(img, index);
+  });
+});
+
+/* DEFAULT */
+dots[0].classList.add('active');
+</script>
+

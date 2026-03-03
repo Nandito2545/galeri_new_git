@@ -1,0 +1,206 @@
+<style>
+    /* SECTION */
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+.partner-section {
+  background: #efefef;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* Wrapper */
+.partner-wrapper {
+  padding: 50px 70px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Title */
+.partner-title {
+  font-size: 44px;
+  color: #8b4a2f;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.top-divider,
+.bottom-divider {
+  width: 100%;
+  height: 1px;
+  background: #999;
+}
+
+/* LOGO GRID */
+.logo-area {
+  flex: 1;
+  padding: 20px 0;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #999;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-content: center;
+  justify-items: center;
+  gap: 40px 30px;
+}
+
+.logo-area img {
+  max-width: 140px;
+  height: auto;
+}
+
+/* FOOTER */
+.bottom-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* Footer links (FIX warna biru) */
+.footer-links {
+  font-size: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;   /* ⬅ tidak biru */
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #8b4a2f;
+}
+
+.footer-links span {
+  color: #999;
+}
+
+/* SOCIAL MEDIA HORIZONTAL */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon i {
+  font-size: 18px;
+  color: #333;
+}
+
+.icon:hover {
+  background: #8b4a2f;
+  border-color: #8b4a2f;
+}
+
+.icon:hover i {
+  color: #fff;
+}
+
+/* Right color bar */
+.side-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-top { flex: 1; background: #8b4a2f; }
+.bar-bottom { flex: 1; background: #6f8f7c; }
+</style>
+<section class="partner-section container-fluid p-0">
+    <div class="global-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  <div class="row g-0 vh-100">
+
+    <div class="col-12 position-relative partner-wrapper">
+
+      <!-- Title -->
+      <div class="top-area">
+        <h1 class="partner-title">Our Partner</h1>
+      </div>
+
+      <!-- Logo Grid -->
+      <div class="logo-area">
+
+        <!-- Row 1 -->
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+
+        <!-- Row 2 -->
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+
+        <!-- Row 3 -->
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+        <img src="img/ace.png">
+
+      </div>
+
+      <!-- Footer -->
+      <div class="bottom-area">
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <span>|</span>
+          <a href="#">Sponsorship</a>
+          <span>|</span>
+          <a href="#">Partnership</a>
+          <span>|</span>
+          <a href="#">Donate</a>
+        </div>
+
+        <div class="social-icons">
+            <div class="icon"><i class="bi bi-facebook"></i></div>
+            <div class="icon"><i class="bi bi-instagram"></i></div>
+            <div class="icon"><i class="bi bi-twitter-x"></i></div>
+            <div class="icon"><i class="bi bi-youtube"></i></div>
+        </div>
+      </div>
+
+      <!-- Right Color Bar -->
+      <div class="side-bar">
+        <div class="bar-top"></div>
+        <div class="bar-bottom"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

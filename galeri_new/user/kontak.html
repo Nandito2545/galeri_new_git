@@ -1,0 +1,189 @@
+<style>
+* {
+  font-family: "Georgia", serif;
+}
+
+.contact-section {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* MAP */
+.map-side {
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.map-side iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  /* editorial / ilustration look */
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+}
+
+
+/* CONTENT */
+.content-side {
+  width: 48%;
+  padding: 70px 40px;
+  position: relative;
+  background: #fff;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #222;
+  margin-bottom: 5px;
+}
+
+.content-side h1 {
+  font-size: 38px;
+  font-weight: 600;
+  color: #7a3f21;
+  line-height: 1.3;
+}
+
+.content-side p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.content-side hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0;
+}
+
+/* SOCIAL */
+.social-icons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.social-icons i {
+  font-size: 20px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* CONTACT */
+.contact-info {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  align-items: flex-start;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* RIGHT STRIPS */
+.right-strips {
+  width: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.strip.brown {
+  background: #7a3f21;
+  height: 50%;
+}
+
+.strip.green {
+  background: #6f8b6b;
+  height: 50%;
+}
+
+</style>
+<section class="contact-section d-flex">
+<div class="global-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  <!-- MAP -->
+  <div class="map-side">
+  <iframe
+    src="https://www.google.com/maps?q=-6.237173418621425,106.83512985981602&z=15&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+  <!-- CONTENT -->
+  <div class="content-side">
+
+
+    <h1>
+      Hubungi Kami untuk<br>
+      kemitraan strategis, konsultasi<br>
+      dan dukungan.
+    </h1>
+
+    <hr>
+
+    <p>
+      Para penulis dan kontributor Galeri Buku Jakarta yang dicintai pembacanya.
+      Betapa kisah-kisah itu penting dan membawa para pembaca pada keluasan
+      khasanah sekaligus kedalaman makna. Galeri Buku Jakarta selalu memiliki
+      misi ganda: untuk mempromosikan penulis paling menarik dan untuk mendukung
+      pembaca yang ambisius dan ingin tahu.
+    </p>
+
+    <hr>
+
+    <!-- SOCIAL -->
+    <div class="social-icons">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter-x"></i>
+      <i class="bi bi-youtube"></i>
+    </div>
+
+    <hr>
+
+    <!-- CONTACT -->
+    <div class="contact-info">
+      <i class="bi bi-geo-alt"></i>
+      <span>
+        Jl. Taman Patra III, Setiabudi, Jakarta Selatan.
+        Phone: (021) 100199.
+        Email: galeribukujakarta@gmail.com
+      </span>
+    </div>
+
+    <hr>
+
+    <!-- FOOT LINK -->
+    <div class="footer-links">
+      About Us | Editorial Team | Design & Printing | Partnership
+    </div>
+
+  </div>
+
+  <!-- RIGHT STRIPS -->
+  <div class="right-strips">
+    <div class="strip brown"></div>
+    <div class="strip green"></div>
+  </div>
+
+</section>
