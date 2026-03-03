@@ -1,6 +1,4 @@
-@extends('layouts.app') <!-- layout utama -->
-
-@section('content')
+@extends('layouts.app') @section('content')
 
 <div class="top-auth text-end mb-3">
     <a href="{{ route('subscribe') }}" class="btn btn-primary btn-subscribe">Subscribe</a>
@@ -10,12 +8,10 @@
 <div class="container-fluid hero">
     <div class="row h-100">
 
-        <!-- LEFT IMAGE -->
         <div class="col-md-6 hero-left">
             <img id="heroImage" src="https://picsum.photos/800/1000?random=1" class="img-fluid">
         </div>
 
-        <!-- RIGHT CONTENT -->
         <div class="col-md-6 hero-right">
 
             <div id="year" class="year">1978</div>
@@ -25,7 +21,6 @@
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, a accusamus blanditiis nostrum pariatur tenetur error in fugiat eos ut dolorum repellat eius excepturi nisi fugit necessitatibus expedita doloribus mollitia. 
             </div>
 
-            <!-- SUBSCRIBE FORM (HIDDEN DEFAULT) -->
             <div id="subscribeForm" class="subscribe-form step-active">
 
                 <h2>Create Account</h2>
@@ -57,7 +52,6 @@
 
             </div>
 
-            <!-- PAYMENT FORM -->
             <div id="paymentForm" class="subscribe-form payment-step">
 
                 <h2>Payment</h2>
@@ -67,16 +61,15 @@
                     <p>Rp 49.000 / Tahun</p>
                 </div>
 
-                <form method="POST" action="{{ route('pay') }}">
+                <form id="payment-form" method="POST" action="{{ route('pay') }}">
                     @csrf
-                    <button class="btn btn-success btn-submit w-100">Bayar Sekarang</button>
+                    <button type="submit" id="pay-button" class="btn btn-success btn-submit w-100">Bayar Sekarang</button>
                 </form>
 
                 <button class="btn btn-link btn-back back-subscribe">← Back</button>
 
             </div>
 
-            <!-- LOGIN FORM -->
             <div id="loginForm" class="login-form">
                 <h2>Login</h2>
 
@@ -106,7 +99,6 @@
                 <button class="btn btn-link btn-back back-timeline">← Back to timeline</button>
             </div>
 
-            <!-- TIMELINE -->
             <div class="timeline mt-4">
                 <div class="track position-relative">
                     <span class="dot active" data-index="0"></span>
@@ -121,5 +113,71 @@
 
     </div>
 </div>
+
+<script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const paymentForm = document.getElementById('payment-form');
+        
+        if(paymentForm) {
+            paymentForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah browser pindah halaman
+
+                const form = this;
+                const formData = new FormData(form);
+                const payButton = document.getElementById('pay-button');
+                
+                // Ubah teks tombol jadi loading
+                const originalText = payButton.innerHTML;
+                payButton.innerHTML = "Memproses...";
+                payButton.disabled = true;
+
+                // Kirim request ke backend secara diam-diam (AJAX)
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Kembalikan tombol seperti semula
+                    payButton.innerHTML = originalText;
+                    payButton.disabled = false;
+
+                    if (data.snapToken) {
+                        // Memanggil popup Midtrans Snap
+                        window.snap.pay(data.snapToken, {
+                            onSuccess: function(result) {
+                                alert("Pembayaran Berhasil!");
+                                // Arahkan ke halaman success
+                                window.location.href = "{{ route('payment.success') }}"; 
+                            },
+                            onPending: function(result) {
+                                alert("Menunggu pembayaran Anda!");
+                            },
+                            onError: function(result) {
+                                alert("Pembayaran Gagal!");
+                            },
+                            onClose: function() {
+                                alert("Anda menutup popup sebelum menyelesaikan pembayaran.");
+                            }
+                        });
+                    } else {
+                        alert("Gagal mendapatkan token pembayaran dari server.");
+                    }
+                })
+                .catch(error => {
+                    payButton.innerHTML = originalText;
+                    payButton.disabled = false;
+                    console.error("Error:", error);
+                    alert("Terjadi kesalahan jaringan.");
+                });
+            });
+        }
+    });
+</script>
 
 @endsection

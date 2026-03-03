@@ -12,36 +12,40 @@ class PaymentController extends Controller
 {
     public function __construct()
     {
-        Config::$serverKey = env('MIDTRANS_SERVER_KEY');
-        Config::$isProduction = false;
-        Config::$isSanitized = true;
-        Config::$is3ds = true;
+        Config::$serverKey = config('midtrans.server_key');
+        Config::$isProduction = config('midtrans.is_production'); // Mengambil dari .env
+        Config::$isSanitized = config('midtrans.is_sanitized');
+        Config::$is3ds = config('midtrans.is_3ds');
     }
 
     public function pay(Request $request)
-    {
-        $user_id = Session::get('pending_user');
-        $user = User::findOrFail($user_id);
+{
+    // Gunakan user yang sedang login (karena sudah lewat middleware auth)
+    $user = auth()->user(); 
 
-        $order_id = "ORDER-" . time();
+    $order_id = "ORDER-" . time();
 
-        $params = [
-            'transaction_details' => [
-                'order_id' => $order_id,
-                'gross_amount' => 49000,
-            ],
-            'customer_details' => [
-                'first_name' => $user->name,
-                'email' => $user->email,
-            ],
-        ];
+    $params = [
+        'transaction_details' => [
+            'order_id' => $order_id,
+            'gross_amount' => 49000,
+        ],
+        'customer_details' => [
+            'first_name' => $user->nama, // Pastikan kolom di DB adalah 'nama'
+            'email' => $user->email,
+        ],
+    ];
 
-        $snapToken = Snap::getSnapToken($params);
-
-        return response()->json([
-            'snapToken' => $snapToken
-        ]);
+    try {
+        // Ambil URL redirect dari Snap Midtrans
+        $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+        
+        // Redirect user langsung ke halaman pembayaran Midtrans
+        return redirect()->away($paymentUrl);
+    } catch (\Exception $e) {
+        return back()->with('error', 'Gagal menghubungkan ke Midtrans: ' . $e->getMessage());
     }
+}
 
     // Setelah pembayaran berhasil
     public function success(Request $request)
