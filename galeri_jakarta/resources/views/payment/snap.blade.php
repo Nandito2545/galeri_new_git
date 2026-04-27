@@ -2,7 +2,7 @@
 <button id="pay-button">Bayar Sekarang</button>
 
 <script src="https://app.sandbox.midtrans.com/snap/snap.js" 
-        data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+        data-client-key="{{ config('midtrans.client_key') }}"></script>
 
 <script>
 document.getElementById('pay-button').addEventListener('click', function () {

@@ -90,10 +90,10 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <strong>{{ $a->judul }}</strong><br>
-                            <small>{{ \Carbon\Carbon::parse($a->tanggal)->format('d M Y') }} - {{ $a->penulis }}</small>
+                            <small>{{ \Carbon\Carbon::parse($a->tanggal_publish)->format('d M Y') }} - {{ $a->penulis }}</small>
                         </div>
-                        <a href="{{ url('/admin/artikel/detail/' . $a->id) }}"
-                            class="btn btn-sm btn-outline-secondary">Detail</a>
+                        <a href="{{ route('admin.artikel.edit', $a->id) }}"
+                            class="btn btn-sm btn-outline-secondary">Edit</a>
                     </div>
                 </div>
             @endforeach
@@ -139,7 +139,7 @@
                 @foreach ($galeri as $g)
                     <div class="col-md-4 mb-3">
                         <div class="p-2 border rounded h-100">
-                            <h6 class="mb-1">{{ $g->nama_galeri }}</h6>
+                            <h6 class="mb-1">{{ $g->nama_folder }}</h6>
                             <p class="mb-1">{!! nl2br(e($g->deskripsi)) !!}</p>
                             <small class="text-muted">Dibuat:
                                 {{ \Carbon\Carbon::parse($g->tanggal_dibuat)->format('d M Y') }}</small><br>

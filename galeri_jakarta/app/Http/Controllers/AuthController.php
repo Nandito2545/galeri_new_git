@@ -27,9 +27,11 @@ class AuthController extends Controller
             'subscription' => 'free',
         ]);
 
-        Session::put('pending_user', $user->id); // untuk payment nanti
+        event(new \Illuminate\Auth\Events\Registered($user));
 
-        return response()->json(['success' => true]);
+        Auth::login($user);
+
+        return response()->json(['success' => true, 'redirect' => route('payment.page')]);
     }
 
     // Login AJAX

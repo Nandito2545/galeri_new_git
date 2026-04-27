@@ -85,8 +85,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ url('/admin/publications') }}">
+                        <a class="nav-link {{ request()->routeIs('admin.publikasi.*') && !request()->routeIs('admin.publikasi.create') ? 'fw-bold text-primary' : 'text-dark' }}" href="{{ url('/admin/publications') }}">
                             <span class="nav-link-text">Data Konten Publikasi</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.pustaka.*') && !request()->routeIs('admin.pustaka.create') ? 'fw-bold text-primary' : 'text-dark' }}" href="{{ route('admin.pustaka.index') }}">
+                            <span class="nav-link-text">Data Konten Pustaka</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -110,8 +115,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ url('/admin/publications/tambah') }}">
+                        <a class="nav-link {{ request()->routeIs('admin.publikasi.create') ? 'fw-bold text-primary' : 'text-dark' }}" href="{{ url('/admin/publications/tambah') }}">
                             <span class="nav-link-text">Add Konten Publikasi</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.pustaka.create') ? 'fw-bold text-primary' : 'text-dark' }}" href="{{ route('admin.pustaka.create') }}">
+                            <span class="nav-link-text">Add Konten Pustaka</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -133,9 +143,21 @@
                     </h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="{{ url('/admin/profile') }}">
+                    <a class="nav-link {{ request()->routeIs('admin.profile') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('admin.profile') }}">
                         <i class="material-symbols-rounded opacity-5">person</i>
                         <span class="nav-link-text ms-1">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.users.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('admin.users.index') }}">
+                        <i class="material-symbols-rounded opacity-5">group</i>
+                        <span class="nav-link-text ms-1">Kelola User</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.finance.*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('admin.finance.index') }}">
+                        <i class="material-symbols-rounded opacity-5">account_balance_wallet</i>
+                        <span class="nav-link-text ms-1">Kelola Keuangan</span>
                     </a>
                 </li>
             </ul>
@@ -168,7 +190,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdown"
                                 style="z-index: 1055;">
-                                <li><a class="dropdown-item" href="{{ url('/admin/profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ route('admin.profile') }}">Profile</a></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
